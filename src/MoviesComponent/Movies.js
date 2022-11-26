@@ -8,7 +8,7 @@ function Movies() {
       <tr>
         <td>EPISODE {info.episode_id}</td>
         <td>
-          Episode {intToRoman(2)} - {info.title}
+          Episode {intToRoman(info.episode_id)} - {info.title}
         </td>
         <td>{info.release_date}</td>
       </tr>
@@ -16,7 +16,7 @@ function Movies() {
   });
 
   return (
-    <div>
+    <div class="container">
       <table className="table table-striped">
         <thead></thead>
         <tbody>{DisplayData}</tbody>
