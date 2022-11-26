@@ -4,7 +4,6 @@ import { intToRoman } from './Common.js';
 function Movies() {
   const DisplayData = MoviesData.results.map((info) => {
     let episodeId = intToRoman(info.episode_id);
-    alert(intToRoman(2));
     return (
       <tr>
         <td>EPISODE {info.episode_id}</td>
