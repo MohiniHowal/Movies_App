@@ -1,10 +1,10 @@
 import React from 'react';
 import MoviesData from './MoviesData.json';
-import { intToRoman } from './common.js';
+import { intToRoman } from './Common.js';
 function Movies() {
   const DisplayData = MoviesData.results.map((info) => {
     let episodeId = intToRoman(info.episode_id);
-    alert(intToRoman(2))
+    alert(intToRoman(2));
     return (
       <tr>
         <td>EPISODE {info.episode_id}</td>
