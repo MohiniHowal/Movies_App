@@ -1,11 +1,14 @@
 import React from 'react';
 import MoviesData from './MoviesData.json';
+import Common from './Common.js';
 function Movies() {
   const DisplayData = MoviesData.results.map((info) => {
     return (
       <tr>
         <td>EPISODE {info.episode_id}</td>
-        <td>Episode - {info.title}</td>
+        <td>
+          Episode Common.intToRoman({info.episode_id}) - {info.title}
+        </td>
         <td>{info.release_date}</td>
       </tr>
     );
@@ -13,7 +16,7 @@ function Movies() {
 
   return (
     <div>
-      <table class="table table-striped">
+      <table className="table table-striped">
         <thead></thead>
         <tbody>{DisplayData}</tbody>
       </table>
