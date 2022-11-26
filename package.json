@@ -3,11 +3,25 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@popperjs/core": "^2.11.6",
-    "bootstrap": "^5.2.3",
+    "@popperjs/core": "2.11.6",
+    "@types/react": ">=16.14.8",
+    "bootstrap": "5.2.3",
+    "eslint": "^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "react": "18.1.0",
+    "react-bootstrap": "^2.6.0",
     "react-dom": "18.1.0"
   },
+  "keywords": [
+    "react",
+    "hooks",
+    "form",
+    "forms",
+    "form-validation",
+    "validation",
+    "typescript",
+    "react-hooks"
+  ],
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -18,8 +32,11 @@
     "react-scripts": "latest"
   },
   "babel": {
-    "presets": [
-      "env"
-    ]
+    "presets": ["env"]
+  },
+  "plugins": ["react-hooks"],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
   }
 }
