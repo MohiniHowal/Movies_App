@@ -18,8 +18,8 @@ function Movies() {
   });
 
   return (
-    <div class="container">
-      <div id="header">
+    <div className="container">
+      <div id="header" className="col-md-12">
         <img
           src="https://stackblitz.com/files/react-hukszn/github/MohiniHowal/Movies_App/main/src/MoviesComponent/logo.png"
           alt="logo"
