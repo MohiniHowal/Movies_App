@@ -3,9 +3,8 @@ import MoviesData from './MoviesData.json';
 import { intToRoman } from './Common.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Movies.css';
-import companyLogo from './logo.png';
 function Movies() {
-  const DisplayData = MoviesData.f5results.map((info) => {
+  const DisplayData = MoviesData.results.map((info) => {
     let episodeId = intToRoman(info.episode_id);
     return (
       <tr>
@@ -21,7 +20,10 @@ function Movies() {
   return (
     <div class="container">
       <div id="header">
-        <img src={companyLogo} alt="logo" />
+        <img
+          src="https://stackblitz.com/files/react-hukszn/github/MohiniHowal/Movies_App/main/src/MoviesComponent/logo.png"
+          alt="logo"
+        />
       </div>
       <table className="table table-striped">
         <thead></thead>
