@@ -21,4 +21,4 @@ function Movies() {
   );
 }
 
-export default JsonDataDisplay;
+export default Movies;

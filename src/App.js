@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import './Movies/Movies';
+import './MoviesComponent/Movies';
 
 export default function App() {
   return (
