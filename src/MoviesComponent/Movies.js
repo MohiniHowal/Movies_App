@@ -14,12 +14,10 @@ function Movies() {
   };
 
   const handleMenuOne = () => {
-    // do something
     setOpen(false);
   };
 
   const handleMenuTwo = () => {
-    // do something
     setOpen(false);
   };
 

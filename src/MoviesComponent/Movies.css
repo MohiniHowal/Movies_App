@@ -67,14 +67,14 @@
 }
 
 .menu {
-  top: 30px;
+  top: 53px;
   border: 1px solid #ddd;
 }
 
 .menu-item {
   border-bottom: 1px solid #ddd;
   border: 1px solid #ccc;
-  font-size: 13px;
+  font-size: 15px;
 }
 .menu > li:hover {
   background-color: #eee;
