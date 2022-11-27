@@ -22,17 +22,17 @@
   width: 150px;
 }
 
-.menu > a {
+.menu > li {
   margin: 0;
 
   background-color: white;
 }
 
-.menu > a:hover {
+.menu > li:hover {
   background-color: lightgray;
 }
 
-.menu > a > button {
+.menu > li > button {
   width: 100%;
   height: 100%;
   text-align: left;
