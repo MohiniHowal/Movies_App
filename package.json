@@ -10,7 +10,11 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "react": "18.1.0",
     "react-bootstrap": "^2.6.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-brands-svg-icons": "^5.11.2",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.7"
   },
   "keywords": [
     "react",

@@ -1,11 +1,9 @@
 import * as React from 'react';
-import ReactDOM from 'react-dom/client';
 import { useState } from 'react';
-import MoviesData from './MoviesData.json';
-import { intToRoman } from './Common.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import Dropdown from 'react-bootstrap/Dropdown';
+import MoviesData from './MoviesData.json';
+import { intToRoman } from './Common.js';
 import './Movies.css';
 
 function Movies() {
@@ -25,18 +23,40 @@ function Movies() {
     setOpen(false);
   };
 
-  const DisplayData = MoviesData.results.map((info) => {
-    let episodeId = intToRoman(info.episode_id);
-    return (
-      <tr>
-        <td>EPISODE {info.episode_id}</td>
-        <td>
-          Episode {intToRoman(info.episode_id)} - {info.title}
-        </td>
-        <td>{info.release_date}</td>
-      </tr>
-    );
-  });
+  const [search, setSearch] = React.useState('');
+
+  const handleSearch = (event) => {
+    setSearch(event.target.value);
+  };
+
+  const DisplayData = MoviesData.results
+    .filter(
+      (row) =>
+        row.episode_id
+          .toString()
+          .toLowerCase()
+          .includes(search.toString().toLowerCase()) ||
+        row.title
+          .toString()
+          .toLowerCase()
+          .includes(search.toString().toLowerCase()) ||
+        row.release_date
+          .toString()
+          .toLowerCase()
+          .includes(search.toString().toLowerCase())
+    )
+    .map((info) => {
+      let episodeId = intToRoman(info.episode_id);
+      return (
+        <tr>
+          <td>EPISODE {info.episode_id}</td>
+          <td>
+            Episode {intToRoman(info.episode_id)} - {info.title}
+          </td>
+          <td>{info.release_date}</td>
+        </tr>
+      );
+    });
 
   return (
     <div id="movieContainer" className="container-fluid">
@@ -57,12 +77,19 @@ function Movies() {
           ) : null}
         </div>
         <div className="col-md-11">
-          <input id="searchableTable" name="searchTable" type="text" className="form-control" />
+          <input
+            id="searchableTable"
+            name="searchTable"
+            type="text"
+            className="form-control"
+            placeholder="Type to Search..."
+            onChange={handleSearch}
+          />
         </div>
       </div>
       <div className="row">
         <div id="leftSideContainer" className="col-md-6">
-          <table className="table table-striped">
+          <table className="table table-striped" id="movieTable">
             <thead></thead>
             <tbody>{DisplayData}</tbody>
           </table>
