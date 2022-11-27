@@ -39,26 +39,38 @@ function Movies() {
   });
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-md-12">
-          <button onClick={handleOpen}>Dropdown</button>
+    <div id="movieContainer" className="container-fluid">
+      <div className="row filterRow">
+        <div className="col-md-1">
+          <button id="dropdownSortBy" onClick={handleOpen}>
+            Sort by...
+          </button>
           {open ? (
             <ul className="menu">
               <li className="menu-item">
-                <button onClick={handleMenuOne}>Menu 1</button>
+                <button onClick={handleMenuOne}>Episode</button>
               </li>
               <li className="menu-item">
-                <button onClick={handleMenuTwo}>Menu 2</button>
+                <button onClick={handleMenuTwo}>Year</button>
               </li>
             </ul>
           ) : null}
         </div>
+        <div className="col-md-11">
+          <input id="searchableTable" name="searchTable" type="text" className="form-control" />
+        </div>
       </div>
-      <table className="table table-striped">
-        <thead></thead>
-        <tbody>{DisplayData}</tbody>
-      </table>
+      <div className="row">
+        <div id="leftSideContainer" className="col-md-6">
+          <table className="table table-striped">
+            <thead></thead>
+            <tbody>{DisplayData}</tbody>
+          </table>
+        </div>
+        <div id="rightSideContainer" className="col-md-6">
+          No Movie selected
+        </div>
+      </div>
     </div>
   );
 }

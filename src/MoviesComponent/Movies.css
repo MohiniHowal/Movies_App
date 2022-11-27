@@ -11,6 +11,10 @@
   position: relative;
 }
 
+#movieContainer {
+  margin-top: 10px;
+}
+
 .menu {
   position: absolute;
 
@@ -44,4 +48,51 @@
   margin: 0;
   font: inherit;
   cursor: pointer;
+}
+
+#dropdownSortBy {
+  border: 1px solid #ccc;
+  padding: 7px 10px;
+  font-size: 13px;
+  margin: 7px 0px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px 1px #ddd;
+  width: 97px;
+}
+
+#searchableTable {
+  margin-top: 5px;
+  box-shadow: 1px 1px 1px 1px #ddd;
+}
+
+.menu {
+  top: 30px;
+  border: 1px solid #ddd;
+}
+
+.menu-item {
+  border-bottom: 1px solid #ddd;
+  border: 1px solid #ccc;
+  font-size: 13px;
+}
+.menu > li:hover {
+  background-color: #eee;
+}
+
+#leftSideContainer {
+  border-right: 1px solid #ccc;
+  padding-right: 0px;
+}
+
+#rightSideContainer {
+  margin: auto;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.filterRow {
+  background-color: #eee;
+  margin: 0px;
+  margin-bottom: 10px;
 }
