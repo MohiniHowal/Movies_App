@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import MoviesData from './MoviesData.json';
@@ -15,10 +15,12 @@ function Movies() {
 
   const handleMenuOne = () => {
     setOpen(false);
+    MoviesData.results.sort((a, b) => a.episode_id - b.episode_id);
   };
 
   const handleMenuTwo = () => {
     setOpen(false);
+    MoviesData.results.sort((a, b) => a.release_date - b.release_date);
   };
 
   const [search, setSearch] = React.useState('');
@@ -26,6 +28,28 @@ function Movies() {
   const handleSearch = (event) => {
     setSearch(event.target.value);
   };
+
+  /*const [sorting, setSorting] = useState({
+    key: 'episode_id',
+    ascending: true,
+  });
+  const [currentEpisode, setCurrentEpisode] = useState(MoviesData.results);
+
+  useEffect(() => {
+    const currentEpisodeCopy = [...currentEpisode];
+
+    const sortedCurrentEpisode = currentEpisodeCopy.sort((a, b) => {
+      currentEpisode.sort((a,b) => a.episode_id - b.episode_id)
+    });
+
+    setCurrentEpisode(
+      sorting.ascending ? sortedCurrentEpisode : sortedCurrentEpisode.reverse()
+    );
+  }, [currentEpisode, sorting]);
+
+  function applySorting(key, ascending) {
+    setSorting({ key: key, ascending: ascending });
+  }*/
 
   const DisplayData = MoviesData.results
     .filter(
