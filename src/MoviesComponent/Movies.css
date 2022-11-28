@@ -86,13 +86,24 @@
   min-height: 100vh;
 }
 
-#rightSideContainer {
-  margin: auto;
-  text-align: center;
-}
-
 .filterRow {
   background-color: #eee;
   margin: 0px;
   margin-bottom: 10px;
+}
+
+.details {
+  margin-bottom: 20px;
+}
+
+#tab-content strong {
+  font-size: 26px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.noMovieSelected {
+  display: block;
+  margin: 200px auto;
+  text-align: center;
 }

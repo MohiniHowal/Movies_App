@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import Moment from 'moment';
 import MoviesData from './MoviesData.json';
 import { intToRoman } from './Common.js';
 import './Movies.css';
@@ -20,7 +21,11 @@ function Movies() {
 
   const handleMenuTwo = () => {
     setOpen(false);
-    MoviesData.results.sort((a, b) => a.release_date - b.release_date);
+    MoviesData.results.sort(
+      (a, b) =>
+        new Moment(a.release_date).format('YYYYMMDD') -
+        new Moment(b.release_date).format('YYYYMMDD')
+    );
   };
 
   const [search, setSearch] = React.useState('');
@@ -28,28 +33,6 @@ function Movies() {
   const handleSearch = (event) => {
     setSearch(event.target.value);
   };
-
-  /*const [sorting, setSorting] = useState({
-    key: 'episode_id',
-    ascending: true,
-  });
-  const [currentEpisode, setCurrentEpisode] = useState(MoviesData.results);
-
-  useEffect(() => {
-    const currentEpisodeCopy = [...currentEpisode];
-
-    const sortedCurrentEpisode = currentEpisodeCopy.sort((a, b) => {
-      currentEpisode.sort((a,b) => a.episode_id - b.episode_id)
-    });
-
-    setCurrentEpisode(
-      sorting.ascending ? sortedCurrentEpisode : sortedCurrentEpisode.reverse()
-    );
-  }, [currentEpisode, sorting]);
-
-  function applySorting(key, ascending) {
-    setSorting({ key: key, ascending: ascending });
-  }*/
 
   const DisplayData = MoviesData.results
     .filter(
@@ -69,8 +52,34 @@ function Movies() {
     )
     .map((info) => {
       let episodeId = intToRoman(info.episode_id);
+
+      const fetchDetails = (e) => {
+        e.preventDefault();
+        const h1 = document.getElementById('tab-content');
+        h1.remove();
+        const node = document.createElement('div');
+        var br = document.createElement('br');
+        var br2 = document.createElement('br');
+        var bold = document.createElement('strong');
+        node.setAttribute('id', 'tab-content');
+        const textnode1 = document.createTextNode(
+          'Episode' + intToRoman(info.episode_id) + ' - ' + info.title
+        );
+        const textnode2 = document.createTextNode(info.opening_crawl);
+        const textnode3 = document.createTextNode(
+          'Directed By:    ' + info.director
+        );
+        bold.appendChild(textnode1);
+        node.appendChild(bold);
+        node.appendChild(br);
+        node.appendChild(textnode2);
+        node.appendChild(br2);
+        node.appendChild(textnode3);
+        document.getElementById('rightSideContainer').append(node);
+      };
+
       return (
-        <tr>
+        <tr onClick={fetchDetails} data-tab={info.episode_id}>
           <td>EPISODE {info.episode_id}</td>
           <td>
             Episode {intToRoman(info.episode_id)} - {info.title}
@@ -117,7 +126,9 @@ function Movies() {
           </table>
         </div>
         <div id="rightSideContainer" className="col-md-6">
-          No Movie selected
+          <div id="tab-content">
+            <span className="noMovieSelected">No Movie selected</span>
+          </div>
         </div>
       </div>
     </div>
