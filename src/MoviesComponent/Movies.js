@@ -60,10 +60,11 @@ function Movies() {
         const node = document.createElement('div');
         var br = document.createElement('br');
         var br2 = document.createElement('br');
+        var br3 = document.createElement('br');
         var bold = document.createElement('strong');
         node.setAttribute('id', 'tab-content');
         const textnode1 = document.createTextNode(
-          'Episode' + intToRoman(info.episode_id) + ' - ' + info.title
+          'Episode ' + intToRoman(info.episode_id) + ' - ' + info.title
         );
         const textnode2 = document.createTextNode(info.opening_crawl);
         const textnode3 = document.createTextNode(
@@ -74,6 +75,7 @@ function Movies() {
         node.appendChild(br);
         node.appendChild(textnode2);
         node.appendChild(br2);
+        node.appendChild(br3);
         node.appendChild(textnode3);
         document.getElementById('rightSideContainer').append(node);
       };
