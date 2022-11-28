@@ -92,7 +92,7 @@ function Movies() {
   return (
     <div id="movieContainer" className="container-fluid">
       <div className="row filterRow">
-        <div className="col-md-1">
+        <div className="col-md-1 padding-left-5">
           <button id="dropdownSortBy" onClick={handleOpen}>
             Sort by...
           </button>
@@ -107,7 +107,7 @@ function Movies() {
             </ul>
           ) : null}
         </div>
-        <div className="col-md-11">
+        <div className="col-md-11 padding-left-5">
           <input
             id="searchableTable"
             name="searchTable"

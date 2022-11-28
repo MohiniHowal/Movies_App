@@ -55,10 +55,11 @@
   padding: 5px;
   font-size: 16px;
   margin: 7px 0px;
-  background-color: #fff;
   border-radius: 4px;
   box-shadow: 1px 1px 1px 1px #ddd;
   width: 97px;
+  background-color: #f7f7f7;
+  color: mediumslateblue;
 }
 
 #searchableTable {
@@ -68,12 +69,12 @@
 
 .menu {
   top: 53px;
-  border: 1px solid #ddd;
+  border: none !important;
+  box-shadow: 1px 1px 1px 1px #ddd;
 }
 
 .menu-item {
-  border-bottom: 1px solid #ddd;
-  border: 1px solid #ccc;
+  border-bottom: 1px solid #eee;
   font-size: 15px;
 }
 .menu > li:hover {
@@ -106,4 +107,16 @@
   display: block;
   margin: 200px auto;
   text-align: center;
+}
+
+.padding-left-5 {
+  padding-left: 5px;
+}
+
+tr:hover {
+  background-color: lightsteelblue;
+  color: #fff;
+}
+tr {
+  cursor: pointer;
 }
