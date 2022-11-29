@@ -11,6 +11,9 @@
     "moment": "^2.29.0",
     "moment-duration-format": "^2.2.2",
     "moment-timezone": "^0.5.23",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/reat": "^11.2.5",
+    "@testing-library/user-event": "^12.7.3",
     "react": "18.1.0",
     "react-bootstrap": "^2.6.0",
     "react-dom": "18.1.0",
@@ -32,7 +35,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "devDependencies": {

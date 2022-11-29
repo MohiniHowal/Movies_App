@@ -122,7 +122,11 @@ function Movies() {
       </div>
       <div className="row">
         <div id="leftSideContainer" className="col-md-6">
-          <table className="table table-striped" id="movieTable">
+          <table
+            className="table table-striped"
+            id="movieTable"
+            data-testid="movies-1"
+          >
             <thead></thead>
             <tbody>{DisplayData}</tbody>
           </table>
